@@ -15,5 +15,6 @@ variable "image_tag" {
 }
 
 variable "github_actor" {
-  type = string
+  description = "GitHub username"
+  type        = string
 }
