@@ -12,7 +12,6 @@ provider "render" {
   owner_id = var.render_owner_id
 }
 
-# Nom dynamique basé sur l'utilisateur GitHub
 variable "github_actor" {
   description = "GitHub username"
   type        = string
@@ -38,5 +37,5 @@ resource "render_web_service" "flask_app" {
 }
 
 output "render_service_url" {
-  value = render_web_service.flask_app.service.url
+  value = render_web_service.flask_app.dashboard_url
 }
