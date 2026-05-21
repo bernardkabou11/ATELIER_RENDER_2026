@@ -1,10 +1,16 @@
-FROM python:3.12-slim
+FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY app/requirements.txt .
+# Installer les dépendances
+COPY requirements.txt /app
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app/ .
+# Copier le reste du code
+COPY . /app
 
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-10000} app:app"]
+# Exposer le port utilisé par Flask
+EXPOSE 5000
+
+# Lancer l'application
+CMD ["python", "app.py"]
