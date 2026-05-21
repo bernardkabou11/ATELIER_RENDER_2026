@@ -124,6 +124,16 @@ frontend/
 **Indices N°2 :** Le répertoire racine de votre React (frontend) est à renseigner dans le champ **Root Directory** dans Render lors de la création de votre **Static Site**  
 
 ---------------------------------------------------
+### Déploiement du frontend React
+
+Le frontend se trouve dans le dossier `frontend/`. Pour déployer sur Render comme **Static Site** :
+- `Root Directory` = `frontend`
+- `Build Command` = `npm install && npm run build`
+- `Publish Directory` = `dist`
+
+Copiez `frontend/.env.example` en `frontend/.env` et remplacez `VITE_API_URL` par l'URL publique de votre backend Flask Render.
+
+---------------------------------------------------
 Evaluation
 ---------------------------------------------------
 Cet atelier Render, **noté sur 20 points**, est évalué sur la base du barème suivant :  
