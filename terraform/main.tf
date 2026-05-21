@@ -12,6 +12,11 @@ provider "render" {
   owner_id = var.render_owner_id
 }
 
+variable "github_actor" {
+  description = "GitHub username"
+  type        = string
+}
+
 resource "render_web_service" "flask_app" {
   name   = "flask-render-iac-${var.github_actor}"
   plan   = "free"
@@ -24,13 +29,4 @@ resource "render_web_service" "flask_app" {
     }
   }
 
-  env_vars = {
-    PORT = {
-      value = "5000"
-    }
-  }
-}
-
-output "render_service_url" {
-  value = render_web_service.flask_app.service_details.url
 }
