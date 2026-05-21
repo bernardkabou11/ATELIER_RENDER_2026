@@ -13,3 +13,7 @@ variable "image_url" {
 variable "image_tag" {
   type = string
 }
+
+variable "github_actor" {
+  type = string
+}
