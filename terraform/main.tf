@@ -32,5 +32,5 @@ resource "render_web_service" "flask_app" {
 }
 
 output "render_service_url" {
-  value = render_web_service.flask_app.dashboard_url
+  value = render_web_service.flask_app.service_details.url
 }
